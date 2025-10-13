@@ -6,7 +6,7 @@
     "start": "next start",
     "setup": "node ./lib/setup.js",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "format": "prettier --check .",
+    "format": "prettier --write .",
     "test": "jest"
   },
   "dependencies": {
