@@ -1,2 +1,4 @@
 onlyBuiltDependencies:
+  - netlify-cli
   - sharp
+  - unrs-resolver
