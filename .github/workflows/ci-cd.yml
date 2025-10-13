@@ -19,24 +19,24 @@ jobs:
           version: 10
           run_install: false
 
-      - name: Install Node.js
+      - name: Installing Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
 
-      - name: Install dependencies
+      - name: Installing dependencies
         run: pnpm install
 
-      - name: Run lint
+      - name: Linting code with ESLint
         run: pnpm run lint
 
-      - name: Run prettier
-        run: pnpm run prettier
+      - name: Formatting code with Prettier
+        run: pnpm run format
 
-      - name: Run tests
+      - name: Testing code with Jest
         run: pnpm run test
 
-      - name: Create build
+      - name: Build project
         run: pnpm run build
 
       - name: Deploy to Netlify
