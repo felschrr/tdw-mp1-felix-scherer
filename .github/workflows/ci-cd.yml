@@ -27,6 +27,11 @@ jobs:
       - name: Installing dependencies
         run: pnpm install
 
+      - name: Setting up environment variables
+        run: |
+          echo "${{secrets.CONTENTFUL_ACCESS_TOKEN }}" > .env
+          echo "${{secrets.CONTENTFUL_PREVIEW_ACCESS_TOKEN }}" > .env
+
       - name: Linting code with ESLint
         run: pnpm run lint
 
