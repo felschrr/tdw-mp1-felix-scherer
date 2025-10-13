@@ -11,7 +11,7 @@ on:
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
-  lint-prettify-test-and-build:
+  main-pipeline:
     runs-on: ubuntu-latest
 
     steps:
