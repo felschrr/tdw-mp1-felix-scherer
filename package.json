@@ -4,7 +4,10 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "setup": "node ./lib/setup.js"
+    "setup": "node ./lib/setup.js",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "format": "prettier --check .",
+    "test": "jest --coverage=true"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.22.11",
