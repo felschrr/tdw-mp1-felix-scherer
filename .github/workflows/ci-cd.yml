@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - "main"
+  repository_dispatch:
+    types: [cms-content-update]
+  schedule:
+    - cron: '0 0 * * *'  # Runs at 00:00 every day (turn off after validation)
+  workflow_dispatch:  # Allows manual triggering
 
 jobs:
   lint-prettify-test-and-build:
@@ -47,4 +52,5 @@ jobs:
         run: pnpm run build
 
       - name: Deploy to Netlify
+        if: github.ref == 'refs/heads/main'
         run: npx netlify-cli deploy --site ${{secrets.NETLIFY_SITE_ID}} --auth ${{secrets.NETLIFY_AUTH_TOKEN}} --prod
