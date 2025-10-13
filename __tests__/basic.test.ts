@@ -34,7 +34,11 @@ const SyncPageWrapper = (): ReactElement => {
 
 test("Checks if 'No posts found' is rendered in homepage", async () => {
   render(React.createElement(SyncPageWrapper));
-  expect(await screen.findByText("No posts found. Please check your Contentful configuration.")).toBeInTheDocument();
+  expect(
+    await screen.findByText(
+      "No posts found. Please check your Contentful configuration.",
+    ),
+  ).toBeInTheDocument();
 });
 
 test("Checks if the word 'Blog' is rendered on the homepage", async () => {
