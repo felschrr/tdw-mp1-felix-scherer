@@ -29,8 +29,10 @@ jobs:
 
       - name: Setting up environment variables
         run: |
-          echo "${{secrets.CONTENTFUL_ACCESS_TOKEN }}" > .env
-          echo "${{secrets.CONTENTFUL_PREVIEW_ACCESS_TOKEN }}" > .env
+          echo "CONTENTFUL_SPACE_ID=${{ secrets.CONTENTFUL_SPACE_ID }}" >> .env
+          echo "CONTENTFUL_MANAGEMENT_TOKEN=${{ secrets.CONTENTFUL_MANAGEMENT_TOKEN }}" >> .env
+          echo "CONTENTFUL_ACCESS_TOKEN=${{ secrets.CONTENTFUL_ACCESS_TOKEN }}" >> .env
+          echo "CONTENTFUL_PREVIEW_ACCESS_TOKEN=${{ secrets.CONTENTFUL_PREVIEW_ACCESS_TOKEN }}" >> .env
 
       - name: Linting code with ESLint
         run: pnpm run lint
