@@ -6,8 +6,8 @@ on:
       - "main"
   repository_dispatch:
     types: [cms-content-update]
-  schedule:
-    - cron: "45 15 * * *" # Runs at 15:45 every day (UTC time)
+  # schedule:
+    # - cron: "0 0 * * *" # Runs at 00:00 every day (UTC time)
   workflow_dispatch: # Allows manual triggering
 
 jobs:
